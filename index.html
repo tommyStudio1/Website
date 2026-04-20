@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>GP Gartenservice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5fff7;
+      color: #1e1e1e;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2e7d32, #66bb6a);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    /* NAV */
+    nav {
+      background: white;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 5px 12px;
+      text-decoration: none;
+      color: #2e7d32;
+      font-weight: bold;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    /* 🔥 NAV HOVER */
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background: #2e7d32;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #1b5e20;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 50px 15px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 25px;
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    /* IMAGE */
+    .before-after img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    /* CONTACT */
+    .contact {
+      background: linear-gradient(135deg, #e8f5e9, #ffffff);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+    }
+
+    /* 🔥 WHATSAPP BUTTON HOVER */
+    .whatsapp-btn {
+      display: inline-block;
+      background: #25D366;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-top: 15px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .whatsapp-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      background: #1ebe5d;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    /* FLOATING BUTTON */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 15px 18px;
+      border-radius: 50px;
+      font-size: 20px;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      z-index: 9999;
+      transition: all 0.3s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.15);
+      background: #1ebe5d;
+    }
+
+    /* SCROLL ANIMATION */
+    .hidden {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2e7d32;
+      color: white;
+      margin-top: 30px;
+    }
+
+    /* RESPONSIVE */
+    @media (min-width: 700px) {
+      .services {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1000px) {
+      .services {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      header h1 {
+        font-size: 3rem;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header class="hidden">
+  <h1>GP Gartenservice</h1>
+  <p>Ihr zuverlässiger Partner für Gartenarbeiten in Arnsberg</p>
+</header>
+
+<nav>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#bilder">Ergebnisse</a>
+  <a href="#kontakt">Kontakt</a>
+</nav>
+
+<section id="leistungen" class="hidden">
+  <h2>Unsere Leistungen</h2>
+
+  <div class="services">
+    <div class="card hidden"><h3>Rasenmähen</h3><p>Gepflegter Rasen für ein schönes Gesamtbild.</p></div>
+    <div class="card hidden"><h3>Hochdruckreinigung</h3><p>Saubere Wege und Terrassen.</p></div>
+    <div class="card hidden"><h3>Heckenschnitt</h3><p>Perfekte Form und gesunde Hecken.</p></div>
+    <div class="card hidden"><h3>Unkrautentfernung</h3><p>Saubere Flächen ohne Unkraut.</p></div>
+    <div class="card hidden"><h3>Laubentfernung</h3><p>Gründliche Reinigung im Herbst.</p></div>
+  </div>
+</section>
+
+<section id="bilder" class="hidden">
+  <h2>Vorher / Nachher</h2>
+  <div class="before-after">
+    <img src="vorher-nachher.png" alt="Vorher Nachher">
+  </div>
+</section>
+
+<section id="kontakt" class="hidden">
+  <h2>Kontakt</h2>
+  <div class="contact">
+    <p><strong>Adresse:</strong> Haddoweg 17, 59757 Arnsberg</p>
+
+    <a class="whatsapp-btn"
+       href="https://wa.me/4917626729720?text=Hallo%20GP%20Gartenservice"
+       target="_blank">
+       📲 WhatsApp schreiben
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 GP Gartenservice</p>
+</footer>
+
+<a class="floating-whatsapp"
+   href="https://wa.me/4917626729720"
+   target="_blank">💬</a>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  });
+
+  document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
